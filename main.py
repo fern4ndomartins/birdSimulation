@@ -24,7 +24,7 @@ class Bird:
             self.birdPos.x += 3*self.velocity
         else:
             self.birdPos.x -= 3*self.velocity
-        pygame.draw.circle(screen, "black", self.birdPos, 5)
+        pygame.draw.circle(screen, "white", self.birdPos, 3)
 
     def direction(self):
         if self.birdPos.y > 700:
@@ -38,14 +38,14 @@ class Bird:
             self.goright = True
 
 
-birds = [Bird() for i in range(20)]
+birds = [Bird() for i in range(90)]
 
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    screen.fill("purple")
+    screen.fill("blue")
     for bird in birds:
         bird.direction()
         bird.fly()
